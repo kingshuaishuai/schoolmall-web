@@ -1,10 +1,12 @@
 /*
 * @Author: yishuai
 * @Date:   2019-03-03 11:51:32
-* @Last Modified by:   yishuai
-* @Last Modified time: 2019-03-03 12:54:34
+* @Last Modified by:   kingshuaishuai
+* @Last Modified time: 2019-03-04 16:20:14
 */
-import './index.css';
-import t from '../conModule.js';
-console.log('hello this is index.js')
-console.log('index',t.test);
+require('page/common/nav/index.js')
+require('page/common/header/index.js')
+let navSide = require('page/common/nav-side/index.js')
+var _sm = require('util/sm.js');
+
+navSide.init({name: 'pass-update'})

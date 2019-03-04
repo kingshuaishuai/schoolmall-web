@@ -1,0 +1,25 @@
+@import "../variables"
+navSideWidth = 130px
+contentWidth = 950px
+navItemHeight = 25px
+navItemFontSize = 13px
+navItemFontColor = #888
+
+.page-wrap
+  // 侧边导航
+  .nav-side
+    float: left
+    width: navSideWidth
+    min-height: 100px
+    .nav-item
+      line-height: navItemHeight
+      font-size: navItemFontSize
+      .link
+        color: navItemFontColor
+      &.active
+        .link
+          color: themeColor
+  // 内容主体
+  .content.with-nav
+    float: left
+    width: contentWidth

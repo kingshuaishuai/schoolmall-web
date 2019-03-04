@@ -1,8 +1,8 @@
 /*
 * @Author: yishuai
 * @Date:   2019-03-03 11:49:21
-* @Last Modified by:   yishuai
-* @Last Modified time: 2019-03-03 13:18:13
+* @Last Modified by:   kingshuaishuai
+* @Last Modified time: 2019-03-04 16:46:04
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,10 +10,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name,title) {
   return {
       template: './src/view/' + name + '.html',
       filename: 'view/' + name + '.html',
+      title: title,
       inject: true,
       hash: true,
       chunks: ['common','base' ,name],
@@ -29,12 +30,25 @@ var webpackConfig = {
   entry: {
     index: ['./src/page/index/index.js'],
     login: ['./src/page/login/index.js'],
-    common: ['./src/page/common/index.js']
+    common: ['./src/page/common/index.js'],
+    result: ['./src/page/result/index.js'],
   },
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  resolve: {
+    alias: {
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      image: __dirname + '/src/image',
+      node_modules: __dirname + '/node_modules'
+    }
+  },
+  externals: {
+    jquery: 'window.jQuery'
   },
   optimization: {
     minimizer: [
@@ -85,6 +99,16 @@ var webpackConfig = {
           'postcss-loader'
         ]
       },
+      // 处理stylus
+      {
+        test:/\.styl$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'stylus-loader'
+        ]
+      },
       // 处理图片
       {
         test: /\.(png|jpg|jpeg|gif)\??.*$/,
@@ -110,6 +134,15 @@ var webpackConfig = {
             }
           }
         ]
+      },
+      // 处理html模板
+      {
+        test: /\.string$/,
+        use: [
+          {
+            loader: 'html-loader'
+          }
+        ]
       }
     ]
   },
@@ -117,11 +150,12 @@ var webpackConfig = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
-    new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('login'))
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
   ],
   devServer: {
-    port: 3000,
+    port: 8080,
     progress: true,
     contentBase: './dist',
     compress: true
