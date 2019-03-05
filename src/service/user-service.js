@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-04 11:51:31
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 13:22:18
+* @Last Modified time: 2019-03-05 13:27:55
 */
 var _sm = require('util/sm.js')
 
@@ -84,7 +84,7 @@ var _user = {
   // 获取用户信息
   getUserInfo(resolve,reject){
     _sm.request({
-      url: _sm.getServerUrl('/user/get_infomation.do'),
+      url: _sm.getServerUrl('/user/get_information.do'),
       method: 'POST',
       success: resolve,
       error: reject
@@ -93,7 +93,7 @@ var _user = {
   // 更新个人信息
   updateUserInfo(userInfo, resolve, reject) {
     _sm.request({
-      url: _sm.getServerUrl('/user/update_infomation.do'),
+      url: _sm.getServerUrl('/user/update_information.do'),
       data: userInfo,
       method: 'POST',
       success: resolve,

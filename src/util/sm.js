@@ -2,7 +2,7 @@
 * @Author: yishuai
 * @Date:   2019-03-03 13:59:54
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 11:53:40
+* @Last Modified time: 2019-03-04 21:15:31
 */
 let Hogan = require('hogan.js');
 
@@ -70,7 +70,7 @@ let _sm = {
     }
     //手机验证
     if('phone' === type) {
-      return /^1\d{10}$/.test(value);
+      return /^1[34578]\d{9}$/.test(value);
     }
     // 邮箱验证
     if('email' === type) {
@@ -81,7 +81,7 @@ let _sm = {
   },
   // 统一登录处理
   doLogin: function () {
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   goHome(){
     window.location.href='./index.html';

@@ -2,7 +2,7 @@
 * @Author: yishuai
 * @Date:   2019-03-03 11:49:21
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 16:46:04
+* @Last Modified time: 2019-03-05 13:38:43
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -28,23 +28,28 @@ var getHtmlConfig = function (name,title) {
 var webpackConfig = {
   mode: 'development',
   entry: {
-    index: ['./src/page/index/index.js'],
-    login: ['./src/page/login/index.js'],
-    common: ['./src/page/common/index.js'],
-    result: ['./src/page/result/index.js'],
+    'index'             : ['./src/page/index/index.js'],
+    'user-login'        : ['./src/page/user-login/index.js'],
+    'user-register'     : ['./src/page/user-register/index.js'],
+    'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
+    'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
+    'user-center'       : ['./src/page/user-center/index.js'],
+    'user-center-update': ['./src/page/user-center-update/index.js'],
+    'common'            : ['./src/page/common/index.js'],
+    'result'            : ['./src/page/result/index.js']
   },
   output: {
-    filename: 'js/[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    filename          : 'js/[name].js',
+    path              : path.resolve(__dirname, 'dist'),
+    publicPath        : '/'
   },
   resolve: {
     alias: {
-      util: __dirname + '/src/util',
-      page: __dirname + '/src/page',
-      service: __dirname + '/src/service',
-      image: __dirname + '/src/image',
-      node_modules: __dirname + '/node_modules'
+      util            : __dirname + '/src/util',
+      page            : __dirname + '/src/page',
+      service         : __dirname + '/src/service',
+      image           : __dirname + '/src/image',
+      node_modules    : __dirname + '/node_modules'
     }
   },
   externals: {
@@ -150,15 +155,21 @@ var webpackConfig = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
-    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-    new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('index', 'SchoolMall首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
     new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
   ],
   devServer: {
     port: 8080,
     progress: true,
     contentBase: './dist',
-    compress: true
+    compress: true,
+    disableHostCheck: true
   }
 }
 

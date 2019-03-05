@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-04 15:27:53
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 16:16:51
+* @Last Modified time: 2019-03-05 13:56:36
 */
 require('./index.styl');
 var _sm = require('util/sm.js');
@@ -23,9 +23,9 @@ var navSide = {
         href: './order-list.html'
       },
       {
-        name: 'pass-update',
+        name: 'user-pass-update',
         desc: '修改密码',
-        href: './pass-update.html'
+        href: './user-pass-update.html'
       },
       {
         name: 'about',
