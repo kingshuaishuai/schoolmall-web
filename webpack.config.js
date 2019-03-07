@@ -2,7 +2,7 @@
 * @Author: yishuai
 * @Date:   2019-03-03 11:49:21
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-05 13:38:43
+* @Last Modified time: 2019-03-07 16:05:25
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -18,6 +18,7 @@ var getHtmlConfig = function (name,title) {
       inject: true,
       hash: true,
       chunks: ['common','base' ,name],
+      favicon: './favicon.ico',
       // minify: {  
       //   removeAttributeQuotes: true, 
       //   collapseWhitespace: true 
@@ -29,6 +30,8 @@ var webpackConfig = {
   mode: 'development',
   entry: {
     'index'             : ['./src/page/index/index.js'],
+    'list'              : ['./src/page/list/index.js'],
+    'detail'              : ['./src/page/detail/index.js'],
     'user-login'        : ['./src/page/user-login/index.js'],
     'user-register'     : ['./src/page/user-register/index.js'],
     'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -116,7 +119,7 @@ var webpackConfig = {
       },
       // 处理图片
       {
-        test: /\.(png|jpg|jpeg|gif)\??.*$/,
+        test: /\.(png|jpg|jpeg|gif|ico)\??.*$/,
         use: [
           {
             loader: 'file-loader',
@@ -156,6 +159,8 @@ var webpackConfig = {
       filename: 'css/[name].css'
     }),
     new HtmlWebpackPlugin(getHtmlConfig('index', 'SchoolMall首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
@@ -167,9 +172,9 @@ var webpackConfig = {
   devServer: {
     port: 8080,
     progress: true,
-    contentBase: './dist',
+    contentBase: './dist/',
     compress: true,
-    disableHostCheck: true
+    disableHostCheck: true,
   }
 }
 

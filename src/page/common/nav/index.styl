@@ -1,3 +1,4 @@
+@import '../variables'
 navHeight = 30px
 .nav,.user,.link
   margin-right: 5px
@@ -5,15 +6,34 @@ navHeight = 30px
   background: #eee
   height: navHeight
   line-height: navHeight
-  // 用户部分
-  .user
-    float: left
-  .user.login
-    display: none
-  // 导航链接部分
+  .user-info
+    padding-left: 60px
+    // 用户部分
+    .user
+      float: left
+    .user.login
+      display: none
+    // 导航链接部分
   .nav-list
     float: right
     .nav-item
       display: inline-block
       margin-right: 5px
-    
+.logo-pic-wrap
+  position: relative
+  width: themeWidth
+  margin: 0 auto
+  position: relative
+  .logo-pic
+    position: absolute
+    width: 40px
+    height: 40px
+    background-color: #f6f6f6
+    background-image: url('../../../image/icon/logo.png')
+    background-repeat: no-repeat
+    background-size: cover
+    border: 1px solid #eee
+    border-radius: 50%
+    left: 0
+    top: 0px
+    box-shadow: 0 5px 3px #ddd

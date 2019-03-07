@@ -4,3 +4,144 @@
 * @Last Modified by:   kingshuaishuai
 * @Last Modified time: 2019-03-04 09:16:29
 */
+@import '../common/variables'
+floor1Color = #d58717
+floor2Color = #3b838c
+floor3Color = #a93931
+floor4Color = #488bad
+floor5Color = #642663
+.keywords-list
+  float: left
+  width: 240px
+  height: 350px
+  padding: 10px 0;
+  margin-right: 10px
+  background: #666
+  color: #fff
+  .keywords-item
+    padding-left: 10px
+    height: 35px
+    line-height: 35px
+    font-size: 14px
+    &:hover
+      background: #999
+    .link
+      color: #fff
+      margin-right: 6px
+      &:hover
+        color: linkHoverColor
+.banner-con
+  width: 830px
+  background: #eee
+  float: left
+  height: 370px
+  .loading
+    margin-top: 150px
+.floor-wrap
+  .floor-title
+    height: 50px
+    line-height: 50px
+    color: floor1Color
+    font-size: 20px
+    font-weight: normal
+    border-bottom: 1px solid floor1Color
+  .floor-list
+    margin-right: -20px
+    overflow: hidden
+    .floor-item
+      position: relative
+      width: 200px
+      height: 220px
+      margin: 15px 20px 15px 0
+      cursor: pointer
+      background: #fff
+      float: left
+      overflow: hidden
+      transition: all .3s
+      &:hover
+        transform: translateY(-5px)
+        box-shadow: 2px 5px 10px #ccc
+        .floor-text
+          color: linkHoverColor
+      a
+        text-decoration: none
+        .floor-text
+          position: absolute
+          width: 100%
+          height: 40px
+          line-height: 40px
+          font-size: 14px
+          color: #444
+          text-align: center
+        img
+          position: absolute
+          right: 15px
+          bottom: 10px
+          width: 80%
+          height: 75%
+.floor-wrap:nth-child(2)
+  .floor-title
+    color: floor2Color
+    border-bottom: 1px solid floor2Color
+.floor-wrap:nth-child(3)
+  .floor-title
+    color: floor3Color
+    border-bottom: 1px solid floor3Color 
+.floor-wrap:nth-child(4)
+  .floor-title
+    color: floor4Color
+    border-bottom: 1px solid floor4Color
+.floor-wrap:nth-child(5)
+  .floor-title
+    color: floor5Color
+    border-bottom: 1px solid floor5Color
+
+.banner-con
+  .banner
+    .dots
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 20px
+      text-align: center
+      li
+        display: inline-block
+        width: 10px
+        height: 10px
+        margin: 0 4px
+        text-indent: -999em
+        border: 2px solid #fff
+        border-radius: 50%
+        cursor: pointer
+        opacity: .4
+        transition: background .5s, opacity .5s
+        &.active
+          background: #fff
+          opacity: 1
+    .banner-img
+      width: 100%
+      height: 370px
+    .banner-arrow
+      position: absolute
+      top: 50%
+      width: 30px
+      height: 50px
+      margin-top: -25px
+      line-height: 50px
+      text-align: center
+      font-size: 30px
+      background: #ccc
+      background: rgba(0,0,0,.2)
+      cursor: pointer
+      color: #fff
+      &:hover
+        background: #aaa
+        background: rgba(0,0,0,.5)
+      &.prev
+        left: 0
+      &.next
+        right: 0
+
+
+
+

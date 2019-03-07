@@ -1,0 +1,21 @@
+{{#list}}
+  <li class="p-item">
+    <div class="p-img-con">
+      <a class="link" href="./detail.html?productId={{id}}" target="_blank">          
+        <img class="p-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}">
+      </a>
+    </div>
+    <div class="p-name-con ellipsis-two">
+      <a href="./detail.html?productId={{id}}" class="p-name" target="_blank" title="{{name}}">{{name}}</a>
+    </div>
+    <div class="p-subtitle-con ellipsis-line" title="{{subtitle}}">
+      {{subtitle}}
+    </div>
+    <div class="p-price-con">
+      <span class="p-price">￥{{price}}</span>
+    </div>
+  </li>
+{{/list}}
+{{^list}}
+<p class="err-tip">很抱歉，实在找不到您要的商品~</p>
+{{/list}}

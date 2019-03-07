@@ -34,21 +34,14 @@
   outline: none
   cursor: pointer
   text-decoration: none
+  border-radius: 5px
+  user-select: none
 .btn-mini
   height: smBtnHeight
   line-height: smBtnHeight
   font-size: smBtnFontSize
   padding: 0 10px
-/* loading */
-.loading
-  width: loadingSize
-  height: loadingSize
-  display: block
-  background: url(../../image/icon/loading.gif) no-repeat
-  border: 1px solid #ddd
-  border-radius: 5px
-  margin: 10px auto
-  opacity: .6
+  user-select: none
 
 // pannel
 .pannel
@@ -65,8 +58,21 @@
     padding: 10px
     overflow: hidden
   
+.logo-head
+  color: #444
 
-
-
+.ellipsis-line
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+.ellipsis-two{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*autoprefixer: off*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /*autoprefixer: on*/
+}
 
 

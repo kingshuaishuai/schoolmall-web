@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-04 14:01:35
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 15:06:20
+* @Last Modified time: 2019-03-06 10:55:06
 */
 require('./index.styl')
 var _sm = require('util/sm.js')
@@ -11,6 +11,7 @@ var _sm = require('util/sm.js')
 var header = {
   init() {
     this.bindEvent();
+    this.onLoad();
     return this;
   },
   onLoad() {
