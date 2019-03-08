@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-04 11:40:32
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-04 13:42:11
+* @Last Modified time: 2019-03-08 11:45:00
 */
 var _sm = require('util/sm.js');
 
@@ -71,7 +71,7 @@ var _cart = {
     });
   },
   // 更新购物车商品数量
-  updateProduct(productInfo, resolve, reject) {
+  updataProduct(productInfo, resolve, reject) {
     _sm.request({
       url: _sm.getServerUrl('/cart/update.do'),
       data: productInfo,

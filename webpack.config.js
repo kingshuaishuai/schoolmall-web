@@ -2,7 +2,7 @@
 * @Author: yishuai
 * @Date:   2019-03-03 11:49:21
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-07 16:05:25
+* @Last Modified time: 2019-03-07 22:51:13
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -31,7 +31,8 @@ var webpackConfig = {
   entry: {
     'index'             : ['./src/page/index/index.js'],
     'list'              : ['./src/page/list/index.js'],
-    'detail'              : ['./src/page/detail/index.js'],
+    'detail'            : ['./src/page/detail/index.js'],
+    'cart'              : ['./src/page/cart/index.js'],
     'user-login'        : ['./src/page/user-login/index.js'],
     'user-register'     : ['./src/page/user-register/index.js'],
     'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -161,6 +162,7 @@ var webpackConfig = {
     new HtmlWebpackPlugin(getHtmlConfig('index', 'SchoolMall首页')),
     new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
     new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
+    new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),

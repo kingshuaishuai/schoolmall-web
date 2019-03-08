@@ -1,0 +1,112 @@
+@import '../common/variables'
+.cart-table
+  width: 100%
+  border-collapse: collapse
+  border: 1px solid #ebebeb
+  margin-bottom: 10px
+  .cart-cell
+    height: 40px
+    line-height: 40px
+  .cell-check
+    width: 6%
+    text-align: left
+    padding-left: 20px
+  .cell-img
+    width: 10%
+    text-align: left
+    .p-img
+      margin: 10px
+      width: 80px
+      height: 80px
+      border: 1px solid #ddd
+  .cell-info
+    width: 15%
+    text-align: left
+  .cell-price
+    width: 10%
+    text-align: center
+  .cell-count
+    width: 15%
+    text-align: center
+    .count-wrap
+      margin: 0 auto
+      width: 116px
+      border: 1px solid #ddd
+      background: #fff
+      height: 28px
+      line-height: 28px
+      color: #333
+      .count-input
+        width: 60px
+        height: 28px
+        line-height: 28px
+        text-align: center
+        vertical-align: top
+        outline: none
+        color: #333
+        border: none
+      .count-btn
+        font-size: 16px
+        display: inline-block
+        width: 28px
+        height: 28px
+        line-height: 28px
+        user-select: none
+        cursor: pointer
+        color: themeDeepColor
+        &:hover
+          background: themeDeepColor
+          color: #fff
+  .cell-total
+    width: 14%
+    text-align: center
+    font-weight: bold
+  .cell-opera
+    width: 10%
+    text-align: center
+
+.cart-header
+  background: #eee
+  .cell-info
+    width: 25%
+    padding-left: 100px
+
+.cart-footer
+  position: relative
+  line-height: 50px
+  background: #eee
+  overflow: hidden
+  .select-con
+    float: left
+    padding-left: 20px
+  .delete-con
+    float: left
+    margin-left: 20px
+  .submit-con
+    float: right
+    height: 50px
+    span
+      vertical-align: middle
+    .submit-total
+      font-size: 18px
+      color: themeDeepColor
+      font-weight: bold
+      margin-right: 30px
+      vertical-align: middle
+    .btn-submit
+      vertical-align: top
+      width: 80px
+      height: 50px
+      line-height: 50px
+      text-align: center
+.err-tip
+  padding: 0 10px
+  height: 60px
+  line-height: 60px
+  color: themeDeepColor
+  text-align: center
+  font-weight: bold
+  background: #fff
+  font-size: 14px
+    
+
