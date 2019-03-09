@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-09 16:28:17
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-09 18:00:17
+* @Last Modified time: 2019-03-09 19:40:59
 */
 require('./index.styl');
 require('page/common/nav/index.js');
@@ -17,7 +17,7 @@ var page = {
   data: {
     listParam: {
       pageNum: 1,
-      pageSize: 2
+      pageSize: 5
     }
   },
   init () {
