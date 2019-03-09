@@ -20,11 +20,11 @@
   <div class="page-wrap w">
     <%= require('html-loader!./layout/nav-side.html') %>
     <div class="content with-nav">
-      <div class="pannel">
-        <div class="pannel-title">
-          个人中心
+      <div class="panel">
+        <div class="panel-title">
+          <%= htmlWebpackPlugin.options.title %>
         </div>
-        <div class="pannel-body">
+        <div class="panel-body">
           <%= require('html-loader!./layout/loading.html') %>
         </div>
       </div>

@@ -2,11 +2,11 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-07 23:40:26
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-08 13:16:37
+* @Last Modified time: 2019-03-08 19:08:39
 */
 require('./index.styl');
-require('page/common/header/index.js');
 var nav = require('page/common/nav/index.js');
+require('page/common/header/index.js');
 var _cart = require('service/cart-service.js');
 var _sm = require('util/sm.js');
 var templateIndex = require('./index.string');
@@ -128,7 +128,7 @@ var page = {
       // 总价大于0才能提交
       console.log(_this.data.cartInfo);
       if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-        window.location.href = './confirm.html';
+        window.location.href = './order-confirm.html';
       } else {
         _sm.errorTips('请选择商品后再提交!')
       }
@@ -170,7 +170,7 @@ var page = {
   },
   // 显示错误信息
   showCartError(){
-    _this.showCartError()
+    $('.page-wrap').html('<p class="err-tips">哪里不对了，刷新下试试吧！</p>')
   }
 }
 

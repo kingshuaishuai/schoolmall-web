@@ -2,7 +2,7 @@
 * @Author: kingshuaishuai
 * @Date:   2019-03-05 11:18:33
 * @Last Modified by:   kingshuaishuai
-* @Last Modified time: 2019-03-05 12:54:03
+* @Last Modified time: 2019-03-08 19:18:09
 */
 require('./index.styl');
 require('page/common/nav/index.js');
@@ -29,7 +29,7 @@ var page = {
 
     _user.getUserInfo(function(res) {
       userHtml = _sm.renderHtml(templateIndex, res);
-      $('.pannel-body').html(userHtml);
+      $('.panel-body').html(userHtml);
     }, function(errMsg) {
       _sm.errorTips(errMsg)
     })
